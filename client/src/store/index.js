@@ -24,7 +24,7 @@ const store = new Vuex.Store({
       uptime: false,
       online: false
     },
-    pages: [ 'Dashboard', 'Array', 'Shares', 'Docker' ],
+    pages: [ 'Dashboard', 'Array' ],
     options: {
       dark: false,
       opened: { }
@@ -64,11 +64,12 @@ const store = new Vuex.Store({
     connect({ commit, state }) {
       const connect = () => {
         let socket = new WebSocket(state.api)
-        socket.onmessage = event => { commit('MESSAGE', event.data) }
-        socket.onopen    = () => { console.log('connected', state.api) }
+        socket.onmessage = event =>  commit('MESSAGE', event.data) 
+        socket.onopen    = () => console.log('connected')
         socket.onclose    = () => { 
           commit('MESSAGE', JSON.stringify({ general: { online: false }}))
-          console.log('retrying'); setTimeout(connect, 5000) 
+          console.log('retrying')
+          setTimeout(connect, 5000) 
         }
       }
       connect()

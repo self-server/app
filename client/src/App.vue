@@ -4,6 +4,11 @@
       <VToolbarTitle>{{ hostname }}</VToolbarTitle>        
       <VSpacer />
       <Uptime class='d-none d-sm-flex'/>
+      
+      <VBadge dot right overlap color='green' :value='false'>
+        <VIcon v-on:click='todo()'>mdi-bell</VIcon>
+      </VBadge>
+    
       <template v-slot:extension>
         <VTabs show-arrows>
           <VTab v-for='page in pages' :key='page' :to="{ name: page }" exact>{{ page }}</VTab>
@@ -33,13 +38,10 @@ export default {
   mounted() { },
   data: () => ({ }),
   computed: {
-    ...mapGetters(['dark', 'pages']),
-    ...mapGetters(['general']),
+    ...mapGetters(['general','dark', 'pages']),
     hostname() { return this.general.hostname },
   },
-  methods: {
-    // ...mapActions(['webSocketConnect'])
-  },
+  methods: { },
   watch: {
     hostname: {
       immediate: true,
