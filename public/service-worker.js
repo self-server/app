@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.dec7da8d87915df930319d72ff85c8e5.js"
+  "/precache-manifest.0569b1bbbf439522aa8486b29425ee21.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "selfserve-client"});
