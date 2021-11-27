@@ -13,7 +13,7 @@ I'm 100% capable of pulling this off, just need to stay focused.
   - installation/setup process looks to be easy enough to automate.
   - bash? ansible? puppet? chef?  what else is out there that vibes with the goals?
 - self contained executable for management interface
-  - expressjs + websockets + vuejs + pkg
+  - expressjs + websockets + vuejs + pkggit 
 
 ## Purpose
 Provide a low maintenance, self-hosting platform by mixing simple, 
@@ -80,30 +80,3 @@ a drive.
 
 ### Programmers in Mind
 - fully documented api (token? oauth? facebook?) 
-- 
-
-## Goals
-- Custom Debian Installation
-  - LiveCD with persist?
-- JBOD(Just a Bunch of Disks)
-  - Drive Pools
-  - Cache Drives (pools? parity?)
-- Docker
-- Samba
-- No Command Line
-  - Full Web Based UI
-  - Kiosk Mode
-- Open Source
-- SSL
-- Unraid Plugin
-  - when booting, app should recognize if it is on an unraid system and react accordingly
-    - disable some functionality (array management)
-    - custom panels
-- API
-  - stock client will use websockets for more displayed data
-  - determine if using websocket for sending commands
-    - regardless, a HTTP api of some sort makes a lot of sense.
-
-## Install
-
-Comming Soon.
