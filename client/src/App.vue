@@ -1,6 +1,6 @@
 <template>
   <VApp>
-    <VAppBar app dense color="primary" dark>
+    <VAppBar app dense color="primary" dark elevation='0'>
       <VToolbarTitle>{{ hostname }}</VToolbarTitle>        
       <VSpacer />
       <Uptime class='d-none d-sm-flex'/>
@@ -17,7 +17,8 @@
     </VAppBar>
 
     <VMain>
-      <VResponsive height="calc(100vh - 48px)" style='overflow-y: scroll'>
+      <Connecting />
+      <VResponsive height="calc(100vh - 96px)" style='overflow-y: scroll'>
         <VContainer fluid>
           <VSlideXTransition mode='out-in' duration="50">
               <router-view />
@@ -30,16 +31,17 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Uptime from './components/Uptime.vue'
+import Uptime from './components/uptime.vue'
+import Connecting from './components/connecting.vue'
 
 export default {
   name: 'SelfServer',
-  components: { Uptime },
-  mounted() { },
-  data: () => ({ }),
+  components: { Connecting, Uptime },
+  mounted() { this.$store.dispatch('setDark', true) },
+  data: () => ({  }),
   computed: {
     ...mapGetters(['general','dark', 'pages']),
-    hostname() { return this.general.hostname },
+    hostname() { return this.general.hostname }
   },
   methods: { },
   watch: {
@@ -50,7 +52,7 @@ export default {
     dark: {
       immediate: true,
       handler() { this.$vuetify.theme.dark = this.dark }
-    }
+    },
   }
 };
 </script>
@@ -62,5 +64,20 @@ export default {
 
 .v-app-bar {
   background: linear-gradient( 90deg,var(--v-primary-darken2), var(--v-primary-base));
+}
+
+.theme--dark {
+  &.v-tabs {
+    .v-tab {
+      color: #ffffff;
+    }
+    .v-tabs-slider {
+      background-color: #ffffff;
+    }
+  }
+
+  &.v-toolbar.v-sheet {
+    background-color: #1E1E1E !important;
+  }
 }
 </style>

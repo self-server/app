@@ -9,9 +9,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/dashboard/index.vue')
   },
   {
-    path: '/array',
-    name: 'Array',
-    component: () => import(/* webpackChunkName: "about" */ '../views/array/index.vue')
+    path: '/drives',
+    name: 'Drives',
+    component: () => import(/* webpackChunkName: "about" */ '../views/drives/index.vue')
   }
 ]
 

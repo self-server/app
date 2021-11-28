@@ -16,20 +16,24 @@ export default new Vuetify({
         primary: colors.purple.darken2,
         secondary: colors.purple.darken4,
         accent: colors.deepPurple.lighten2,
+        muted: colors.deepPurple.lighten4,
         error: colors.red,
         info: colors.deepPurple.lighten3,
         success: colors.green.lighten1,
         warning: colors.deepOrange.lighten2,
         background: colors.grey.lighten2,
+
       },
       dark: {
         primary: colors.purple.darken2,
         secondary: colors.purple.darken4,
         accent: colors.deepPurple.lighten2,
+        muted: colors.deepPurple.lighten4,
         error: colors.red,
         info: colors.deepPurple.lighten3,
         success: colors.green.lighten1,
-        warning: colors.deepOrange.lighten2
+        warning: colors.deepOrange.lighten2,
+        background: colors.grey.darken4,
       }
     },
   },

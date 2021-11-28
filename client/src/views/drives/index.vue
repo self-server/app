@@ -1,12 +1,10 @@
 <template>
   <div>
     <Panel 
-      key='array'
-      title='Array' 
-      progress-color='accent' 
-      progress-value='100'
+      key='drivesPage'
+      title='Drives' 
     >
-      Placeholder
+      Drive management will live here.
 
     </Panel>
   </div>

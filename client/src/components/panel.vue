@@ -1,8 +1,10 @@
 <template>
-  <VCard tile class='ma-1 mb-2'>
+  <VCard tile class='ma-1 mb-2' elevation='1'>
     <VProgressLinear height='4' :color='progressColor' :value='progressValue' />
     <VToolbar dense tile flat>
-      <VToolbarTitle v-if='title'>{{ title }}</VToolbarTitle>
+      <slot name='title'>
+        <VToolbarTitle v-if='title'>{{ title }}</VToolbarTitle>
+      </slot>
       <VSpacer />
       <VSlideYReverseTransition>
         <div v-show='!expanded'>
@@ -18,7 +20,10 @@
     <VSheet>
       <VExpandTransition>
         <div v-show="expanded">
-          <VCardText>
+          <template v-if="full">
+            <slot />
+          </template>
+          <VCardText v-else>
             <slot />
           </VCardText>
         </div>
@@ -29,13 +34,14 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { v4 as uuid } from 'uuid'
 
 export default {
   name: 'Panel',
   props: {
     progressColor: {
       type: String,
-      default: 'grey lighten-1'
+      default: 'primary'
     },
     progressValue: {
       type: [Number, String],
@@ -45,6 +51,10 @@ export default {
       type: [String, Boolean],
       default: false
     },
+    full: {
+      type: Boolean,
+      default: false
+    }
   },
   data: () => ({ }),
   mounted() { },
@@ -54,7 +64,7 @@ export default {
   computed: {
     ...mapGetters(['opened']),
     panelKey() {
-      return this.$vnode.key || this.$vnode.parent.key
+      return this.$vnode.key ?? this.$vnode.parent.key ?? uuid()
     },
     expanded: {
       get() { 

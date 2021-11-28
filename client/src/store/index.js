@@ -1,3 +1,4 @@
+const RETRY_TIMEOUT = 1000
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -5,7 +6,7 @@ Vue.use(Vuex)
 
 // hacky until i find a better way
 const dev = process.env.NODE_ENV == 'development'
-const api = `ws://${dev ? window.location.hostname + ':8081' : window.location.host }/ws`
+const api = `ws://${dev ? window.location.hostname + ':8080' : window.location.host }/ws`
 
 
 import VuexPersistence from 'vuex-persist'
@@ -24,7 +25,7 @@ const store = new Vuex.Store({
       uptime: false,
       online: false
     },
-    pages: [ 'Dashboard', 'Array' ],
+    pages: [ 'Dashboard', 'Drives' ],
     options: {
       dark: false,
       opened: { }
@@ -69,7 +70,7 @@ const store = new Vuex.Store({
         socket.onclose    = () => { 
           commit('MESSAGE', JSON.stringify({ general: { online: false }}))
           console.log('retrying')
-          setTimeout(connect, 5000) 
+          setTimeout(connect, RETRY_TIMEOUT) 
         }
       }
       connect()

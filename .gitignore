@@ -2,3 +2,5 @@ node_modules
 public
 release/*
 NOTES
+test.js
+deploy.sh
