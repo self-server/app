@@ -6,8 +6,8 @@
   "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "PORT=8080 nodemon .",
-    "start:client": "cd client && yarn serve",
+    "serve": "PORT=8080 nodemon .",
+    "serve:client": "cd client && yarn serve",
     "build:client": "cd client && yarn build",
     "build": "npm run build:client && pkg -C GZip . "
   },
