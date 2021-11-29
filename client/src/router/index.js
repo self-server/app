@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Dashboard from '../views/dashboard/index.vue'
-import Drives from '../views/dashboard/index.vue'
-import Apps from '../views/dashboard/index.vue'
-import Shares from '../views/dashboard/index.vue'
+import Drives from '../views/drives/index.vue'
+import Apps from '../views/apps/index.vue'
+import Shares from '../views/shares/index.vue'
 
 const routes = [
   {
