@@ -1,6 +1,6 @@
 <template>
   <VOverlay :value="!online">
-    <VProgressCircular indeterminate color='error' size='200' width='8'>
+    <VProgressCircular indeterminate color='primary' size='200' width='8'>
       <h2>Connecting</h2>
     </VProgressCircular>
   </VOverlay>
@@ -10,19 +10,10 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'ConnectingOverlay',
-  data: () => ({ loading: false }),
+  data: () => ({  }),
   computed: {
     ...mapGetters(['general']),
     online() { return this.general.online }
   },
-  watch: {
-    online: {
-      immediate: true,
-      handler(val) {
-        if (!val) this.loading = true
-        setTimeout(() => this.loading = !val, 750)
-      }
-    }
-  }
 }
 </script>

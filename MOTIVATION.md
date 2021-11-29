@@ -2,11 +2,11 @@
 
 Just a quick rundown of how we got here.
 
-Used Unraid for years, but found dashboard cluttered.  Started
-building a custom dashboard, but disliked the confines of Unraid.
+Used Unraid for years, found dashboard cluttered.  
+Started building a custom dashboard, disliked the confines of Unraid.
 Pivoted to an opinionated, full-stack solution heavily inspired by Unraid.
 
-Because I've already got years in Unraid, I hope to build the client in a way
+Because I've already got years in Unraid, I hope to build this in a way
 that it can be used alongside Unraid as much as possible.  I also prematurely posted a screen
 shot of the project to r/unRaid that was well received, and it'd be a dick move to not
 follow through.
@@ -14,6 +14,9 @@ follow through.
 # monetization
 
 I won't lie, I'd love to monetize this in an appropriate way. 
+
+did happen
+  - https://www.buymeacoffee.com/selfserver
 
 won't happen
 - Closing the source down in any way (ie, licensing restrictions/subscriptions) is out

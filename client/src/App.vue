@@ -3,7 +3,6 @@
     <VAppBar app dense color="primary" dark elevation='0'>
       <VToolbarTitle>{{ hostname }}</VToolbarTitle>        
       <VSpacer />
-      <Uptime class='d-none d-sm-flex'/>
       
       <VBadge dot right overlap color='green' :value='false'>
         <VIcon v-on:click='todo()'>mdi-bell</VIcon>
@@ -31,12 +30,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Uptime from './components/uptime.vue'
 import Connecting from './components/connecting.vue'
 
 export default {
   name: 'SelfServer',
-  components: { Connecting, Uptime },
+  components: { Connecting },
   mounted() { this.$store.dispatch('setDark', true) },
   data: () => ({  }),
   computed: {

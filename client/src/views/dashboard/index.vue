@@ -10,7 +10,13 @@
           cols='12' sm='12' md='6' lg='4' xl='4'
           v-for='(column, index) in columns' :key="`column-${index}`"
           >
-          <Draggable style='padding-bottom: 100px;' :list='column' group='apps' :key="`draggable-${index}`">
+          <Draggable 
+            style='padding-bottom: 100px;' 
+            :list='column' 
+            group='apps' 
+            :key="`draggable-${index}`"
+            handle='.v-toolbar'
+          >
             <Panel 
               v-for='panel in column' 
               :key="panel.key"

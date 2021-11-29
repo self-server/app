@@ -11,14 +11,18 @@
     "@mdi/font": "5.9.55",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "glob-parent": "^5.1.2",
     "register-service-worker": "^1.7.1",
     "roboto-fontface": "*",
+    "tar": "^4.4.18",
+    "trim-newlines": "^3.0.1",
     "uuid": "^8.3.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuedraggable": "^2.24.3",
     "vuetify": "^2.4.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-persist": "^3.1.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
