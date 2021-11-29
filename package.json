@@ -9,22 +9,24 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm:start:server\" \"npm:start:client\"",
     "start:server": "cd server && PORT=8080 nodemon .",
-    "start:client": "cd client && npm run serve",
+    "start:client": "cd client && yarn serve",
     "build": "npm run build:client && pkg -C GZip . ",
-    "build:client": "cd client && npm run build"
+    "build:client": "cd client && npm run build",
+    "deploy": "npm run build && ./deploy.sh"
   },
   "pkg": {
-    "assets": [
-      "public/**/*"
-    ],
+    "assets": [ "public/**/*" ],
     "scripts": [
-      "server/sockets/**/*.socket.js",
-      "server/events/**/*.event.js"
+      "server/sockets/**/*.js",
+      "server/events/**/*.js"
     ],
     "targets": [
       "node14-linux"
     ],
     "outputPath": "release"
   },
-  "license": "GPL-3.0-only"
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "glob": "^7.2.0"
+  }
 }

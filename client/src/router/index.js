@@ -2,17 +2,37 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+import Dashboard from '../views/dashboard/index.vue'
+import Drives from '../views/dashboard/index.vue'
+import Apps from '../views/dashboard/index.vue'
+import Shares from '../views/dashboard/index.vue'
+
 const routes = [
   {
     path: '/',
+    name: 'Home',
+    redirect: { name: 'Dashboard' }
+  },
+  {
+    path: '/dashboard',
     name: 'Dashboard',
-    component: () => import(/* webpackChunkName: "about" */ '../views/dashboard/index.vue')
+    component: Dashboard
   },
   {
     path: '/drives',
     name: 'Drives',
-    component: () => import(/* webpackChunkName: "about" */ '../views/drives/index.vue')
-  }
+    component: Drives
+  },
+  {
+    path: '/apps',
+    name: 'Apps',
+    component: Apps
+  },
+  {
+    path: '/shares',
+    name: 'Shares',
+    component: Shares
+  },
 ]
 
 const router = new VueRouter({

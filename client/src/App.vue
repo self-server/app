@@ -3,14 +3,21 @@
     <VAppBar app dense color="primary" dark elevation='0'>
       <VToolbarTitle>{{ hostname }}</VToolbarTitle>        
       <VSpacer />
+      <Uptime class='d-none d-sm-flex mr-2'/>
       
       <VBadge dot right overlap color='green' :value='false'>
         <VIcon v-on:click='todo()'>mdi-bell</VIcon>
       </VBadge>
     
       <template v-slot:extension>
-        <VTabs show-arrows>
-          <VTab v-for='page in pages' :key='page' :to="{ name: page }" exact>{{ page }}</VTab>
+        <VTabs show-arrows ref='tabs'>
+          <VTab 
+            v-for='page in pages' 
+            :key='`${page}-tab`' 
+            :to="{ name: page }" 
+          >
+            {{ page }}
+          </VTab>
         </VTabs>
       </template>
     </VAppBar>
@@ -30,12 +37,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Uptime from './components/uptime.vue'
 import Connecting from './components/connecting.vue'
 
 export default {
   name: 'SelfServer',
-  components: { Connecting },
-  mounted() { this.$store.dispatch('setDark', true) },
+  components: { Connecting, Uptime },
+  mounted() { 
+    this.$store.dispatch('setDark', true) 
+    window.dispatchEvent(new Event("resize"));
+  },
   data: () => ({  }),
   computed: {
     ...mapGetters(['general','dark', 'pages']),
@@ -78,4 +89,5 @@ export default {
     background-color: #1E1E1E !important;
   }
 }
+
 </style>

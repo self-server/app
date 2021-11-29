@@ -1,8 +1,16 @@
-const { sockets } = require('..')
-
+const glob = require('glob')
 module.exports = (ws) => {
   ws._send = general => ws.$send({ general })
-  sockets(__dirname).map(file => require(file)(ws))
+
+  glob(__dirname + '*.socket.js', (err, res) => {
+    res.forEach(file => require(file)(ws))
+  })
+
+  ws.on('message', (msg) => {
+    let message = JSON.parse(msg)
+    console.log(message)
+  })
+
   
   ws._send({ online: true })
 

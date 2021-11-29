@@ -25,7 +25,7 @@ const store = new Vuex.Store({
       uptime: false,
       online: false
     },
-    pages: [ 'Dashboard', 'Drives' ],
+    pages: ['Dashboard', 'Drives', 'Shares', 'Apps', ],
     options: {
       dark: false,
       opened: { }

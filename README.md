@@ -8,13 +8,6 @@ After banging out a really promising proof-of-concept halfway
 into the long Thanksgiving weekend, I'm keeping the momentum going.
 I'm 100% capable of pulling this off, just need to stay focused.
 
-### Proof of Concepts
-- SnapRAID + MergeFS
-  - installation/setup process looks to be easy enough to automate.
-  - bash? ansible? puppet? chef?  what else is out there that vibes with the goals?
-- self contained executable for management interface
-  - expressjs + websockets + vuejs + pkggit 
-
 ## Purpose
 Provide a low maintenance, self-hosting platform by mixing simple, 
 reasonable, and robust standards with quality open-source software.
@@ -31,7 +24,6 @@ SelfServer is responsible with the resources you give it.
 | **RAM** | 16GB DDR3 | 2GB DDR3 |
 | **STORAGE** | 2x1TB HDD | 3+x1TB HDD |
 | | 16GB flashdrive | 16GB flashdrive
-
 
 ### Just a Bunch of Drives
 [MergeFS](https://github.com/trapexit/mergerfs) lets us cobble together a bunch of drives
@@ -71,12 +63,12 @@ This project wouldn't be possible without open-source software, and
 personally, I wouldn't be where I am today without it either.  The code
 is as much yours as it is mine.
 
-If you've got the capabilities to improve my work, or extend it with your own ideas, do it.
+If you've got the capabilities to improve my work, or extend it with your own ideas, do it!
 Make it your own, or help me make it better.
 
-### Live Installation
-built with booting off usb in mind, but not restricted to installing to 
-a drive.
+### SelfServerOS
+Out-of-the-box functionality.  Debian based (at least for now). 
+USB+Persistence or installed to drive
 
 ### Programmers in Mind
 - fully documented api (token? oauth? facebook?) 
