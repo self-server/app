@@ -3,3 +3,6 @@ test.js
 install.sh
 NOTES
 public/
+livecd/
+*.iso
+*.torrent
